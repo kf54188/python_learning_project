@@ -116,7 +116,7 @@ class TestDecorator(unittest.TestCase):
 ## 🚀 快速开始
 
 ```bash
-git clone https://github.com/yourname/python_learning_project.git
+git clone https://github.com/kf54188/python_learning_project.git
 cd python_learning_project
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
