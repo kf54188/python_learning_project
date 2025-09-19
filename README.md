@@ -90,6 +90,28 @@ python_learning_project/
 |M18|魔术方法与属性|__str__()、__repr__()、__new__()、__len__()、__getitem__()等|
 
 
+## 🧪 示例：装饰器模块（m14_recursion_decorator.py）
+```python
+def repeat_twice(func):
+    def wrapper(name):
+        return f"{func(name)}\n{func(name)}"
+    return wrapper
+
+@repeat_twice
+def greet(name):
+    return f"Hello, {name}!"
+```
+
+测试文件：test_m14_recursion_decorator.py
+```python
+import unittest
+from modules.m14_recursion_decorator import greet
+
+class TestDecorator(unittest.TestCase):
+    def test_repeat_twice(self):
+        result = greet("服")
+        self.assertEqual(result, "Hello, 服!\nHello, 服!")
+```
 
 ## 🚀 快速开始
 
