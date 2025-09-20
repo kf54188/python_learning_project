@@ -6,7 +6,7 @@ from modules.m01_output import welcome_message, welcome_message_with_args  # 引
 '''
 1. 要测试m01_output中的代码，必须从m01_output中导入welcome_message函数；
   - 学习要点：模块，函数，导入
-2. 基本操作是：测试代码捕获由业务代码输出的内存中的文字，比较与预期是否一致
+2. 基本操作是：测试代码捕获由业务代码输出到内存中的文字，比较与预期是否一致
     - 学习要点：照抄测试用例中捕获文字的方法；
     - 文本输入/输出的实现使用内存中的缓冲区StringIO；
 '''
