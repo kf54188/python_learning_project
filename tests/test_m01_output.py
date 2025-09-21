@@ -18,6 +18,7 @@ class M01Output(unittest.TestCase):
 
         """
         测试 welcome_message 函数的输出内容是否符合预期
+        业务需求：输出一段文字：“欢迎来到 Python 学习项目”，到控制台；
 
         验证标准输出中是否包含"欢迎来到 Python 学习项目"字符串
         通过重定向标准输出到内存缓冲区进行捕获和断言
@@ -32,9 +33,7 @@ class M01Output(unittest.TestCase):
     def test_welcome_message_with_args(self):
         """
         测试 welcome_message_with_args 函数的输出是否包含所有传入的参数
-
-        Args:
-            self: 测试类实例
+        通过要变参数，输出多段文字到控制台；三段 文字是：欢迎来到 Python, 学习项目, Python 3.7.3
 
         验证标准:
             - 输出结果应包含第一个参数"欢迎来到 Python"

@@ -3,12 +3,13 @@ from modules.m05_condition import evaluate_score
 
 class MyTestCase(unittest.TestCase):
     '''
-    评价成绩
-    1. 90分以上为优秀:98分以上为优+
-    2. 75分以上为良好
-    3. 60分以上为及格
-    4. 60分以下为不及格
-    5. >100 或  <0 为无效成绩
+        业务需求：评价成绩
+        1. 90分以上为优秀:98分以上为优+
+        2. 75分以上为良好
+        3. 60分以上为及格
+        4. 60分以下为不及格
+        5. >100 或  <0 为无效成绩
+        创建evaluate_score函数，传入参数score，返回评估结果
     '''
 
     def test_evaluate_score(self):

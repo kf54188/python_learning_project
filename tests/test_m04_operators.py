@@ -11,21 +11,20 @@ from modules.m04_operators import arithmetic_operators, comparison_operators, lo
     arithmetic_operators(9,2)["+"]=13
     comparison_operators(9,2)[">"]=True
     logical_operators(True,True)["&&"]=True
-    
-
-
 '''
 
 class Mo4Operators(unittest.TestCase):
     def test_arithmetic_operators(self):
         """
-               测试算术运算符函数的正确性
-
-               该测试方法验证 arithmetic_operators 函数是否能正确执行各种算术运算，
-               包括加法、减法、乘法、除法、整除、取模和幂运算。
-
-               测试使用参数 9 和 2 进行运算，验证返回字典中各运算符对应的结果值。
-               """
+           业务需求：创建算术运算符表达式，进行运算
+            1. '+': a + b
+            2. '-': a - b
+            3. '*': a * b
+            4. '/': a / b
+            5. '//': a //b
+            6. '%': a % b
+            7. '**': a ** b
+        """
         # 调用算术运算符函数，传入操作数9和2
         result=arithmetic_operators(9,2)
         self.assertEqual(result["+"], 11)
@@ -38,17 +37,11 @@ class Mo4Operators(unittest.TestCase):
 
     def test_arithmetic_operators_divide_by_zero(self):
         """
-                测试算术运算符在除零情况下的处理
+            测试算术运算符在除零情况下的处理
+            该函数测试当除数为0时，arithmetic_operators函数是否能正确处理除法、整除和取模运算，
+            验证这些运算的结果是否为None以避免除零错误。
 
-                该函数测试当除数为0时，arithmetic_operators函数是否能正确处理除法、整除和取模运算，
-                验证这些运算的结果是否为None以避免除零错误。
-
-                参数:
-                    无
-
-                返回值:
-                    无
-                """
+        """
         # 调用算术运算符函数，传入被除数9和除数0
         result=arithmetic_operators(9,0)
         self.assertIsNone(result["/"])
@@ -57,14 +50,12 @@ class Mo4Operators(unittest.TestCase):
 
     def test_comparison_operators(self):
         """
-        测试comparison_operators函数的比较运算符功能
-        该函数验证两个数值之间各种比较运算符的正确性
-
-        参数:
-            无参数
-
-        返回值:
-            无返回值
+            创建comparison_operators（比较运算符）表达式，并进行运算
+            1. '>': a > b
+            2. '<': a < b
+            3. '>=': a >= b
+            4. '<=': a <= b
+            5. '==': a == b
         """
         # 测试comparison_operators函数，传入参数9和2进行比较运算
         result = comparison_operators(9, 2)
@@ -81,13 +72,11 @@ class Mo4Operators(unittest.TestCase):
     def test_logical_operators(self):
 
         """
-        测试 logical_operators 函数的逻辑运算符功能
-
-        验证逻辑运算符(与、或、非)的正确性：
-        1. 测试与运算(&&)结果
-        2. 测试或运算(||)结果
-        3. 测试第一个操作数的非运算结果
-        4. 测试第二个操作数的非运算结果
+            创建 logical_operators（逻辑运算符）表达式，并进行运算
+            1. '&&': a and b
+            2. '||': a or b
+            3. 'not_first': not a
+        4. 'not_second': not b
         """
         result = logical_operators(True, False)
         self.assertEqual(result["&&"], False)
@@ -98,7 +87,7 @@ class Mo4Operators(unittest.TestCase):
     def test_logical_operators_with_none(self):
 
         """
-        测试 logical_operators 函数处理 None 值的情况
+        测试 logical_operators 函数处理参数为 None 值的情况
 
         测试用例包括：
         1. 传入两个 None 参数时是否抛出 TypeError

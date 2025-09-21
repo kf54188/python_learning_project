@@ -24,11 +24,62 @@ def f_format()->str:
 
 
 def str_format()->str:
-
     return "姓名: {}, 年龄: {:06d}, 城市：{}, 有{:.2f}元".format("张三", 18, "上海", 3.5678)
 
+def str_newline()->str:
+    '''
+    “\n”:换行
+    “\t”:制表符
+    "\"":双引号
+    "\'":单引号
+    "\\":反斜杠
+    "\\n":转义字符
+    '''
+    return "姓名: 张三,\n年龄: 18,\n城市：上海,\n有3.57元"
 
+def make_tab_string() -> str:
+    """
+    返回包含制表符的字符串
+    """
+    return "姓名\t年龄\t城市\t3.57元\n张三\t18\t上海\t3.57元"
+
+
+def make_quote_string() -> str:
+    """
+    返回包含引号的字符串
+    """
+    return "She said: \"Hello\" and left."
+
+
+def make_backslash_string() -> str:
+    """
+    返回包含反斜杠的字符串
+    """
+    return "C:\\Users\\Administrator\\Desktop\\test.txt"
+
+
+def replace_newline_with_space(s: str) -> str:
+    """
+    将字符串中的换行符替换为空格
+    """
+    return s.replace("\n", " ")
+
+
+def escape_to_visible(s: str) -> str:
+    """
+    将转义字符替换为可见形式：
+    - 换行符 -> \\n
+    - 制表符 -> \\t
+    - 反斜杠 -> \\\\
+    """
+    return (
+        s.replace("\\", "\\\\")
+         .replace("\n", "\\n")
+         .replace("\t", "\\t")
+    )
 if __name__ == '__main__':
     print(std_format())
     print(f_format())
     print(str_format())
+
+

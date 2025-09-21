@@ -1,15 +1,12 @@
 import unittest
-from modules.m06_loops import sum_with_for, sum_with_while, find_first_even, skip_negatives
+from modules.m06_loops import sum_with_for, sum_with_while, find_first_even, skip_negatives, break_program
 
 
 class M06Loop(unittest.TestCase):
     def test_sum_with_for(self):
 
         """
-        测试 sum_with_for 函数的正确性
-
-        Args:
-            self: 测试类实例
+       使用for循环计算1到n的整数之和
 
         验证 sum_with_for 函数在以下情况下的输出:
         1. 输入正整数时的求和结果
@@ -21,10 +18,7 @@ class M06Loop(unittest.TestCase):
     def test_sum_with_while(self):
 
         """
-        测试 sum_with_while 函数的正确性
-
-        Args:
-            self: 测试类实例
+        使用while循环计算1到n的整数之和
 
         测试用例:
             - 验证 sum_with_while(5) 返回 15
@@ -36,7 +30,7 @@ class M06Loop(unittest.TestCase):
     def test_find_first_even(self):
 
         """
-        测试 find_first_even 函数的正确性
+        使用while循环在列表中查找第一次出现的偶数
 
         验证以下场景：
         1. 列表中包含偶数时返回第一个偶数
@@ -47,16 +41,20 @@ class M06Loop(unittest.TestCase):
 
     def test_skip_negatives(self):
         """
-        测试 skip_negatives 函数过滤负数的功能
+        使用continue语句过滤列表中的负数
 
         验证函数能够:
         1. 正确过滤掉输入列表中的所有负数
         2. 当输入全为负数时返回空列表
-        3. 保留所有非负数的元素
         """
         self.assertEqual(skip_negatives([1, -2, 3, -4, 5]), [1, 3, 5])
         self.assertEqual(skip_negatives([-1, -2, -3]), [])
 
+    def test_break_program(self) :
+        '''
+        在创建列表时，当添加到5时使用break语句跳出循环
+        '''
+        self.assertEqual(break_program(), [0,1, 2, 3, 4, 5])
 
 if __name__ == '__main__':
     unittest.main()

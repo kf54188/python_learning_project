@@ -1,12 +1,6 @@
 def sum_with_for(n) -> int:
     """
-    用for循环 计算从1到n的整数和
-
-    参数:
-        n (int): 正整数，表示求和的上界
-
-    返回值:
-        int: 从1到n的整数和
+    使用循环计算1到n的整数之和
     """
     if not isinstance(n, int) or n < 0:
         raise ValueError("n 必须是正整数")
@@ -19,6 +13,9 @@ def sum_with_for(n) -> int:
 
 
 def sum_with_while(n: int) -> int:
+    '''
+    使用while循环计算1到n的整数之和
+    '''
     if not isinstance(n, int) or n < 0:
         raise ValueError("n 必须是正整数")
     sum=0
@@ -47,3 +44,13 @@ def skip_negatives(nums: list[int]) -> list[int]:
             continue
         result.append(i)
     return result
+
+def break_program() -> list:
+    i=0
+    list=[]
+    while True:
+        list.append(i)
+        if i == 5:
+            break
+        i += 1
+    return list
