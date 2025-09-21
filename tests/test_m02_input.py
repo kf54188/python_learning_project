@@ -40,6 +40,19 @@ class M02Input(unittest.TestCase):
         self.assertEqual(result, expected)  # add assertion here
 
     def test_collect_user_data(self):
+        """
+                测试collect_user_data函数的功能
+
+                该测试函数用于验证collect_user_data函数能否正确收集用户输入的姓名、年龄和城市信息，
+                并返回格式化的字符串。
+
+                测试流程：
+                1. 模拟用户输入"张三"、"18"、"上海"
+                2. 调用collect_user_data函数收集数据
+                3. 验证返回结果是否符合预期格式
+        """
+
+        # 创建模拟输入流，包含姓名、年龄、城市三个输入值
         fake_input= StringIO("张三\n18\n上海\n")
         sys.stdin=fake_input
         result = collect_user_data()
@@ -50,6 +63,19 @@ class M02Input(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_collect_user_data_mult_line(self):
+        """
+                测试collect_user_data函数处理多行用户输入的情况
+
+                该测试用例模拟用户输入多行数据，验证函数能够正确收集和格式化用户信息
+                包括姓名、年龄和地址等字段
+
+                参数:
+                    无
+
+                返回值:
+                    无
+                """
+        # 模拟用户输入多行数据，包括姓名、年龄、地址等信息
         fake_input = StringIO("张三\ndd\n上海\ndd\n\dd\ndd\n")
         sys.stdin = fake_input
         result = collect_user_data()
