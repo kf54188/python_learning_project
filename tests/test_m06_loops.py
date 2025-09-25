@@ -52,7 +52,7 @@ class M06Loop(unittest.TestCase):
 
     def test_break_program(self) :
         '''
-        在创建列表时，当添加到5时使用break语句跳出循环
+        从1至n创建列表，当添加到5时，使用break语句跳出循环
         '''
         self.assertEqual(break_program(), [0,1, 2, 3, 4, 5])
 
